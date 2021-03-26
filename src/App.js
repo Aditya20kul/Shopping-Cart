@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import "./App.css"
+import BuySection from './Components/BuySection';
 
 const App = () => {
     const [cartItem, setCartItem] = useState([])
@@ -31,8 +32,8 @@ const App = () => {
     };
 
     return(
-        <div>
-             <h1>Hello World!</h1>
+        <div className="mt-4">
+             <BuySection addInCart={addInCart}/>
         </div>
     );
 }
