@@ -44,10 +44,8 @@ const BuySection = ({addInCart}) => {
             <Row>
                 
                 {product.map(prod => (
-                    <Col key={prod.id} sm="4">
-                        <div className="p-2 m-2">
-                        <Product product={prod}/>
-                        </div>
+                    <Col key={prod.id} md="4">
+                        <Product product={prod} addInCart={addInCart}/>
                     </Col>                  
                 ))}
                 

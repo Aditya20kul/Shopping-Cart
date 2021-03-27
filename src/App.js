@@ -4,6 +4,9 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import "./App.css"
 import BuySection from './Components/BuySection';
+import {Container, Row, Col} from 'reactstrap'
+import Cart from './Components/Cart';
+
 
 const App = () => {
     const [cartItem, setCartItem] = useState([])
@@ -17,7 +20,9 @@ const App = () => {
                 type: "error"
             })
         }
-        setCartItem([...cartItem, item]);
+        else{
+            setCartItem([...cartItem, item]);
+        }
     }
 
     const buyNow = () => {
@@ -32,9 +37,17 @@ const App = () => {
     };
 
     return(
-        <div className="mt-4">
-             <BuySection addInCart={addInCart}/>
-        </div>
+        <Container fluid>
+            <ToastContainer/>
+            <Row>
+                <Col md="8">
+                    <BuySection addInCart={addInCart}/>
+                </Col>
+                <Col md="4">
+                    <Cart cartItem={cartItem} buyNow={buyNow} removeItem={removeItem}/>
+                </Col>
+            </Row>
+        </Container>
     );
 }
 
