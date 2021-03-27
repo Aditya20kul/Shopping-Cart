@@ -19,7 +19,7 @@ const Cart = ({cartItem, removeItem, buyNow}) => {
     })
     return (
         <Container fluid>
-            <h1 className="text-success">
+            <h1 className="text-success mb-2">
                 Your Cart
             </h1>
             <ListGroup>
@@ -34,11 +34,11 @@ const Cart = ({cartItem, removeItem, buyNow}) => {
                                 />
                             </Col>
                             <Col className="text-center">
-                                <div className="text-primary">
-                                    {item.productName}
+                                <div className="text-primary capitalize">
+                                    <h4>{item.productName}</h4>
                                 </div>
-                                <span>Price :- {item.productPrice}</span>
-                                <Button color="danger" onClick={()=>removeItem(item)}>Remove</Button>
+                                <span className="m-1 p-1">Price :- {item.productPrice}</span>
+                                <Button className="mt-1" color="danger" onClick={()=>removeItem(item)}>Remove</Button>
                             </Col>
                         </Row>
                     </ListGroupItem>
@@ -53,7 +53,7 @@ const Cart = ({cartItem, removeItem, buyNow}) => {
                             Grand Total
                         </CardHeader>
                         <CardBody>
-                            Your Amount for {cartItem.length} products is {amount}
+                            Your Amount for {cartItem.length} products is <span className="text-danger">Rs. {amount}</span>
                         </CardBody>
                         <CardFooter>
                             <Button color="success" onClick={buyNow}>Pay Here</Button>
