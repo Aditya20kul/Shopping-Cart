@@ -22,6 +22,9 @@ const App = () => {
         }
         else{
             setCartItem([...cartItem, item]);
+            toast(`${item} has been Added In Cart`, {
+                type: "info"
+            })
         }
     }
 
