@@ -30,7 +30,7 @@ const App = () => {
 
     const buyNow = () => {
         setCartItem([])
-        toast("Purchase Complete", {
+        toast("Purchase Completed", {
             type: "success"
         })
     }
